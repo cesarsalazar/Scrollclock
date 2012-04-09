@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrollclock - The scrollbar is the time</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <style type="text/css" media="screen">
+      body{
+        height: 1440px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+      }
+      #clock{
+        position: fixed;
+        top: 150px;
+        left: 200px;
+      }
+      #outer-circle{
+        background: black;
+        position: absolute;
+        z-index: 1;
+        width: 320px;
+        height: 320px;
+        -webkit-border-radius: 160px;
+      }
+      #inner-circle{
+        background: white;
+        position: absolute;
+        z-index: 2;
+        width: 300px;
+        height: 300px;
+        left: 10px;
+        top: 10px;
+        -webkit-border-radius: 160px;
+        -webkit-transform: rotate(180deg);
+      }
+      #hours, #minutes{
+        position: absolute;
+        width: 10px;
+        top: 150px;
+        left: 145px;
+        -webkit-border-radius: 5px;
+        -webkit-transform-origin: 50% 5px;
+        -webkit-transform: rotate(0deg);
+      }
+      #hours{
+        background: black;
+        z-index: 4;
+        height: 80px;
+      }
+      #minutes{
+        z-index: 3;
+        background: red;
+        height: 120px;
+      }
+      #display-clock{
+        position: absolute;
+        top: 350px;
+        width: 320px;
+        text-align: center;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <div id="outer-circle">
+        <div id="inner-circle">
+          <div id="hours"></div>
+          <div id="minutes"></div>
+        </div>
+      </div>
+      <div id="display-clock">
+        <span class="hours">00</span>
+        <span class="separator">:</span>
+        <span class="minutes">00</span>
+      </div>      
+    </div>    
+  </body>
+</html>
